@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>د. إسلام طاهر رجب | دكتوراة واستشاري طب وجراحة العيون</title>
-    <meta name="description" content="الموقع الرسمي لعيادات د. إسلام طاهر رجب - دكتوراة واستشاري طب وجراحة العيون جامعة المنصورة. جراحات تجميل العيون والقنوات الدمعية والحجاج، كشف الحول، عمليات المياه البيضاء وتصحيح الإبصار بالفيمتو ليزر بالمنزلة والمطرية.">
+    <title>د. إسلام طاهر | استشاري طب وجراحة العيون</title>
+    <meta name="description" content="الموقع الرسمي لعيادة د. إسلام طاهر - دكتوراة واستشاري طب وجراحة العيون جامعة المنصورة. جراحات تجميل العيون والقنوات الدمعية والحجاج، عمليات المياه البيضاء، تصحيح الإبصار والفيمتو ليزر، وكشف الحول بالمنزلة والمطرية.">
 
-    <!-- خط Cairo العربي بجميع الأوزان -->
+    <!-- تحميل خط Cairo العربي بجميع الأوزان المطلوبة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- مكتبة Tailwind CSS -->
+    <!-- تحميل Tailwind CSS لتنسيق سريع ومتجاوب -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -21,14 +21,14 @@
                         sans: ['"Cairo"', 'sans-serif'],
                     },
                     colors: {
-                        brand: {
+                        medical: {
                             50: '#F0F8FF',
                             100: '#DFF0FC',
-                            200: '#B8DDF7',
-                            600: '#0B63A8',
-                            700: '#084F88',
-                            900: '#0B3558',
-                            950: '#0A1E36',
+                            200: '#BAE0FA',
+                            600: '#0369A1',
+                            700: '#075985',
+                            900: '#0B3B60',
+                            950: '#0A1E32',
                         }
                     }
                 }
@@ -36,7 +36,7 @@
         }
     </script>
 
-    <!-- تنسيقات مخصصة لضبط الاحتواء الكامل ومنع التمرير الأفقي وتناسق الأزرار والقوائم -->
+    <!-- تنسيقات دقيقة لضبط التجاوب، منع التمرير الأفقي، القوائم المخصصة، والبطاقة الختامية -->
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -49,16 +49,16 @@
             overflow-x: hidden;
             margin: 0;
             padding: 0;
-            background-color: #F6F9FC;
-            color: #0F172A;
+            background-color: #F7FAFC;
+            color: #0F2537;
             direction: rtl;
             -webkit-tap-highlight-color: transparent;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* اسم الطبيب في سطر واحد متزن على جميع مقاسات الموبايل */
-        .hero-doctor-name {
-            font-size: clamp(1.42rem, 6vw, 2.35rem);
+        /* اسم الطبيب في سطر واحد واضح ومتوازن على جميع الشاشات */
+        .hero-doctor-title {
+            font-size: clamp(1.75rem, 5vw, 2.6rem);
             line-height: 1.25;
             font-weight: 800;
             letter-spacing: -0.01em;
@@ -67,56 +67,72 @@
 
         /* عناوين الأقسام الرئيسية */
         .section-heading {
-            font-size: clamp(1.25rem, 4.4vw, 1.7rem);
+            font-size: clamp(1.3rem, 4.4vw, 1.75rem);
             line-height: 1.3;
-            font-weight: 700;
+            font-weight: 800;
+            color: #0F2537;
         }
 
-        /* زرا الواجهة الرئيسية المتجاوران بعرض متوازن داخل 420px */
-        .hero-actions-grid {
+        /* إطار صورة الطبيب بنسبة مربعة 1:1 للحفاظ على الدقة الكاملة دون تكبير أو قص */
+        .doctor-photo-frame {
+            aspect-ratio: 1 / 1;
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #E2E8F0;
+            background-color: #0A1E32;
+            box-shadow: 0 20px 44px -20px rgba(10, 30, 50, 0.24);
+        }
+
+        .doctor-photo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        /* زرا الإجراء المتجاوران أسفل الصورة مباشرة */
+        .hero-cta-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 10px;
-            max-width: 420px;
-            margin: 0 auto;
+            max-width: 440px;
+            margin: 20px auto 0;
             width: 100%;
         }
 
-        .hero-action-btn {
+        .hero-cta-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
+            gap: 7px;
             min-width: 0;
             width: 100%;
-            font-size: 13px;
-            line-height: 1.25;
             padding: 12px 10px;
             border-radius: 14px;
             font-weight: 700;
+            font-size: clamp(0.84rem, 3.3vw, 0.96rem);
+            line-height: 1.3;
             white-space: nowrap;
-            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+            text-decoration: none;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
         }
 
-        @media (max-width: 345px) {
-            .hero-actions-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-        }
-
-        @media (min-width: 400px) {
-            .hero-action-btn {
-                font-size: 14px;
-                padding: 13px 14px;
+        @media (min-width: 420px) {
+            .hero-cta-btn {
+                padding: 13px 16px;
                 gap: 8px;
             }
         }
 
-        .hero-action-btn:active {
+        .hero-cta-btn:active {
             transform: scale(0.985);
         }
 
-        /* أزرار بطاقات العيادات: عمود واحد كامل العرض على الموبايل (< 520px) وعمودان متساويان على الشاشات الأكبر */
+        /* أزرار الإجراء داخل بطاقات العيادات: عمود واحد على الموبايل الضيق وعمودان من 480px فأكثر */
         .clinic-actions-grid {
             display: grid;
             grid-template-columns: minmax(0, 1fr);
@@ -124,7 +140,7 @@
             width: 100%;
         }
 
-        @media (min-width: 520px) {
+        @media (min-width: 480px) {
             .clinic-actions-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -137,69 +153,29 @@
             gap: 7px;
             min-width: 0;
             width: 100%;
-            font-size: 13.5px;
-            line-height: 1.3;
             padding: 12px 14px;
             border-radius: 13px;
+            font-size: 0.875rem;
+            line-height: 1.3;
             font-weight: 700;
             text-align: center;
-            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+            text-decoration: none;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
         }
 
         .clinic-action-btn:active {
             transform: scale(0.985);
         }
 
-        /* شبكة أرقام التذييل (3 عناصر متجاوبة بدون تجاوز أفقي) */
-        .footer-phones-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            gap: 10px;
-            width: 100%;
+        /* حركة القوائم المنسدلة المخصصة داخل الصفحة */
+        .custom-select {
+            position: relative;
         }
 
-        @media (min-width: 640px) {
-            .footer-phones-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
+        .custom-select.is-open {
+            z-index: 45;
         }
 
-        /* شبكة روابط التواصل الاجتماعي */
-        .footer-social-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr);
-            gap: 10px;
-            width: 100%;
-        }
-
-        @media (min-width: 400px) {
-            .footer-social-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        /* إطار صورة الطبيب المربعة 1:1 للحفاظ على الدقة والأبعاد الطبيعية دون تكبير */
-        .doctor-photo-frame {
-            aspect-ratio: 1 / 1;
-            width: 100%;
-            max-width: 340px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #E2E8F0;
-            box-shadow: 0 18px 40px -18px rgba(10, 30, 54, 0.2);
-            background-color: #0A1E36;
-        }
-
-        .doctor-photo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-        }
-
-        /* حركة فتح وإغلاق القوائم المنسدلة المخصصة داخل الصفحة */
         .custom-select-menu {
             transform-origin: top center;
             transition: opacity 0.16s ease, transform 0.16s ease;
@@ -220,34 +196,44 @@
         }
 
         /* البطاقة الختامية المعمارية المميزة */
-        .footer-highlight-card {
-            background-color: #0A1E36;
-            background-image:
-                radial-gradient(circle at 50% -18%, rgba(11, 99, 168, 0.52), transparent 58%),
-                radial-gradient(circle at 12% 100%, rgba(56, 189, 248, 0.14), transparent 46%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-top: 3px solid #0B63A8;
+        .architectural-footer-card {
+            position: relative;
+            background: linear-gradient(145deg, #0A1E32 0%, #102A43 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #0369A1;
             border-radius: 24px;
-            box-shadow: 0 24px 54px -20px rgba(10, 30, 54, 0.55);
+            box-shadow: 0 26px 56px -22px rgba(10, 30, 50, 0.58);
+            overflow: hidden;
         }
 
-        /* الإشعار العلوي العائم لا يعترض التفاعل مع الصفحة مطلقًا */
+        .architectural-footer-card::before {
+            content: "";
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 78%;
+            height: 160px;
+            background: radial-gradient(ellipse at center, rgba(3, 105, 161, 0.38) 0%, transparent 72%);
+            pointer-events: none;
+        }
+
+        /* إشعار عائم غير معترض للنقرات */
         #toast-banner {
             pointer-events: none;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-100 selection:text-brand-950">
+<body class="antialiased selection:bg-[#DFF0FC] selection:text-[#0F2537]">
 
-    <!-- إشعار علوي خفيف للنسخ والتنبيهات -->
+    <!-- إشعار علوي خفيف للنسخ والتنبيهات (لا يعيق أي نقرات في الصفحة) -->
     <div id="toast-banner" aria-live="polite" class="fixed top-4 left-1/2 -translate-x-1/2 z-50 -translate-y-24 opacity-0 invisible transition-all duration-300 max-w-[92vw]">
-        <div class="bg-[#0A1E36] text-white px-4 py-2.5 rounded-xl border border-white/15 shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm font-semibold">
+        <div class="bg-[#0A1E32] text-white px-4 py-2.5 rounded-xl border border-white/15 shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm font-semibold">
             <span id="toast-text" class="truncate">تم نسخ العنوان</span>
-            <!-- أيقونة الصح على يسار النص -->
+            <!-- الأيقونة على يسار النص -->
             <svg id="toast-icon-ok" class="w-4 h-4 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M20 6 9 17l-5-5"/>
             </svg>
-            <!-- أيقونة التنبيه على يسار النص -->
             <svg id="toast-icon-warn" class="w-4 h-4 text-amber-400 shrink-0 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <line x1="12" x2="12" y1="8" y2="12"/>
@@ -258,138 +244,131 @@
 
     <main>
         <!-- =========================================================
-             1. الواجهة الرئيسية (HERO SECTION) — بدون شريط علوي
+             1. الواجهة الرئيسية (Hero Section) — تبدأ الصفحة بها مباشرة دون شريط علوي
         ========================================================== -->
-        <section id="hero" class="bg-white border-b border-slate-200/90 pt-8 pb-10 sm:pt-12 sm:pb-14">
+        <section id="hero" class="bg-white border-b border-[#E2E8F0] pt-9 pb-11 sm:pt-14 sm:pb-16">
             <div class="max-w-xl mx-auto px-4 sm:px-6 text-center">
 
                 <!-- اسم الدكتور بسطر واحد واضح -->
-                <h1 class="hero-doctor-name text-[#0F172A]">
-                    د. إسلام طاهر رجب
+                <h1 class="hero-doctor-title text-[#0F2537]">
+                    د. إسلام طاهر
                 </h1>
 
                 <!-- المؤهل العلمي: الاستثناء الوحيد بوضع أيقونة الجامعة على يمين الجملة -->
-                <div class="mt-3 inline-flex items-center justify-center gap-2 bg-[#F0F8FF] border border-[#B8DDF7]/90 rounded-full px-3.5 py-1.5 max-w-full">
-                    <svg class="w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="mt-3 inline-flex items-center justify-center gap-2 bg-[#F0F8FF] border border-[#BAE0FA] rounded-full px-3.5 py-1.5 max-w-full">
+                    <svg class="w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
                         <path d="M6 12v5c3 3 9 3 12 0v-5"/>
                     </svg>
-                    <span class="text-xs sm:text-sm font-bold text-[#0B3558] leading-snug">
+                    <span class="text-xs sm:text-sm font-bold text-[#0B3B60] leading-snug">
                         دكتوراة واستشاري طب وجراحة العيون – جامعة المنصورة
                     </span>
                 </div>
 
-                <!-- النبذة التخصصية المختصرة -->
-                <p class="mt-3.5 text-sm sm:text-[15px] text-slate-600 leading-relaxed max-w-md mx-auto">
+                <!-- نبذة تخصصية موجزة -->
+                <p class="mt-3.5 text-sm sm:text-[15px] text-[#475569] leading-relaxed max-w-md mx-auto">
                     جراحات تجميل العيون والقنوات الدمعية والحجاج، وعمليات المياه البيضاء وتصحيح الإبصار بالفيمتو ليزر.
                 </p>
 
-                <!-- صورة الدكتور المربعة 1:1 مباشرة أسفل الاسم والمؤهل -->
+                <!-- صورة الطبيب المربعة 1:1 أسفل النص مباشرة -->
                 <div class="mt-6">
                     <div class="doctor-photo-frame relative">
                         <img
                             id="doctor-photo"
                             src="https://i.ibb.co/zV19w5Qt/FB-IMG-1795323691645.jpg"
-                            alt="د. إسلام طاهر رجب - دكتوراة واستشاري طب وجراحة العيون"
+                            alt="د. إسلام طاهر - استشاري طب وجراحة العيون"
                             class="doctor-photo-img"
                             onerror="handleDoctorImgError(this)"
                         >
                         <!-- واجهة بديلة أنيقة في حال تعذر تحميل الصورة -->
-                        <div id="doctor-photo-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white bg-[#0A1E36]">
+                        <div id="doctor-photo-fallback" class="hidden absolute inset-0 flex flex-col items-center justify-center p-6 text-center text-white bg-[#0A1E32]">
                             <div class="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mb-3">
                                 <svg class="w-8 h-8 text-sky-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
                                     <circle cx="12" cy="7" r="4"/>
                                 </svg>
                             </div>
-                            <span class="font-bold text-base">د. إسلام طاهر رجب</span>
+                            <span class="font-bold text-base">د. إسلام طاهر</span>
                             <span class="text-xs text-slate-300 mt-1">دكتوراة واستشاري طب وجراحة العيون</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- زرا الإجراء المتجاوران أسفل الصورة مباشرة -->
-                <div class="mt-5">
-                    <div class="hero-actions-grid">
-                        <!-- الزر الأساسي: احجز موعدك الآن + شعار واتساب الأصلي على يسار النص -->
-                        <a href="#booking" data-scroll-to="booking" class="hero-action-btn bg-[#0B63A8] hover:bg-[#084F88] text-white shadow-xs">
-                            <span>احجز موعدك الآن</span>
-                            <svg class="w-[17px] h-[17px] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M12.031 2C6.515 2 2.062 6.453 2.062 11.969c0 1.758.459 3.473 1.331 4.985L2 22l5.184-1.359a9.927 9.927 0 0 0 4.847 1.262h.004c5.515 0 9.968-4.453 9.968-9.969A9.936 9.936 0 0 0 19.08 4.92 9.903 9.903 0 0 0 12.031 2zm0 18.215h-.003a8.248 8.248 0 0 1-4.205-1.152l-.302-.179-3.128.82.835-3.049-.197-.313a8.22 8.22 0 0 1-1.262-4.373c0-4.555 3.707-8.262 8.264-8.262 2.207 0 4.281.86 5.841 2.422a8.208 8.208 0 0 1 2.419 5.842c-.002 4.556-3.708 8.244-8.262 8.244zm4.532-6.183c-.248-.124-1.469-.725-1.696-.808-.228-.083-.393-.124-.559.124-.165.248-.641.808-.786.973-.145.166-.29.186-.538.062-.248-.124-1.048-.386-1.996-1.231-.738-.658-1.236-1.471-1.381-1.719-.145-.248-.015-.382.109-.506.112-.111.248-.29.372-.435.124-.145.165-.248.248-.414.083-.165.041-.31-.021-.434-.062-.124-.559-1.346-.766-1.843-.202-.484-.407-.418-.559-.426l-.476-.008c-.166 0-.434.062-.662.31-.228.248-.869.849-.869 2.071 0 1.222.89 2.402 1.014 2.568.124.165 1.751 2.674 4.242 3.749.593.256 1.055.409 1.416.523.595.189 1.137.162 1.565.098.477-.071 1.469-.6 1.676-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.476-.29z"/>
-                            </svg>
-                        </a>
+                <div class="hero-cta-grid">
+                    <!-- الزر الأساسي: احجز موعدك الآن + شعار واتساب الرسمي على يسار النص -->
+                    <a href="#booking" data-scroll-to="booking" class="hero-cta-btn bg-[#0369A1] hover:bg-[#075985] text-white shadow-xs">
+                        <span>احجز موعدك الآن</span>
+                        <svg class="w-[18px] h-[18px] shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12.031 2C6.515 2 2.062 6.453 2.062 11.969c0 1.758.459 3.473 1.331 4.985L2 22l5.184-1.359a9.927 9.927 0 0 0 4.847 1.262h.004c5.515 0 9.968-4.453 9.968-9.969A9.936 9.936 0 0 0 19.08 4.92 9.903 9.903 0 0 0 12.031 2zm0 18.215h-.003a8.248 8.248 0 0 1-4.205-1.152l-.302-.179-3.128.82.835-3.049-.197-.313a8.22 8.22 0 0 1-1.262-4.373c0-4.555 3.707-8.262 8.264-8.262 2.207 0 4.281.86 5.841 2.422a8.208 8.208 0 0 1 2.419 5.842c-.002 4.556-3.708 8.244-8.262 8.244zm4.532-6.183c-.248-.124-1.469-.725-1.696-.808-.228-.083-.393-.124-.559.124-.165.248-.641.808-.786.973-.145.166-.29.186-.538.062-.248-.124-1.048-.386-1.996-1.231-.738-.658-1.236-1.471-1.381-1.719-.145-.248-.015-.382.109-.506.112-.111.248-.29.372-.435.124-.145.165-.248.248-.414.083-.165.041-.31-.021-.434-.062-.124-.559-1.346-.766-1.843-.202-.484-.407-.418-.559-.426l-.476-.008c-.166 0-.434.062-.662.31-.228.248-.869.849-.869 2.071 0 1.222.89 2.402 1.014 2.568.124.165 1.751 2.674 4.242 3.749.593.256 1.055.409 1.416.523.595.189 1.137.162 1.565.098.477-.071 1.469-.6 1.676-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.476-.29z"/>
+                        </svg>
+                    </a>
 
-                        <!-- الزر الثانوي: مواقع العيادات بلون سماوي #DFF0FC + أيقونة دبوس الموقع على يسار النص -->
-                        <a href="#clinics" data-scroll-to="clinics" class="hero-action-btn bg-[#DFF0FC] hover:bg-[#CDE7FA] text-[#0B3558] border border-[#B8DDF7]">
-                            <span>مواقع العيادات</span>
-                            <svg class="w-[17px] h-[17px] text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-                                <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                        </a>
-                    </div>
+                    <!-- الزر الثانوي: مواقع العيادات بلون سماوي هادئ + أيقونة دبوس الموقع على يسار النص -->
+                    <a href="#clinics" data-scroll-to="clinics" class="hero-cta-btn bg-[#DFF0FC] hover:bg-[#CDE7FA] text-[#0B3B60] border border-[#BAE0FA]">
+                        <span>مواقع العيادات</span>
+                        <svg class="w-[17px] h-[17px] text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </a>
                 </div>
 
             </div>
         </section>
 
         <!-- =========================================================
-             2. قسم العيادات ومواعيد العمل (#clinics)
-             عرض العيادتين معًا بشكل مفتوح دائمًا مع احتواء كامل للأزرار
+             2. قسم عناوين ومواعيد العيادات (#clinics)
+             العيادتان ظاهرتان دائمًا، وروابط الخرائط روابط مباشرة موثّقة بدون أي اعتراض برمجي
         ========================================================== -->
-        <section id="clinics" class="py-10 sm:py-14 bg-[#F6F9FC] border-b border-slate-200/90">
+        <section id="clinics" class="py-11 sm:py-14 bg-[#F7FAFC] border-b border-[#E2E8F0]">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-7 sm:mb-9">
-                    <span class="text-xs sm:text-sm font-semibold text-[#0B63A8]">محافظة الدقهلية</span>
-                    <h2 class="section-heading text-[#0F172A] mt-1">العيادات ومواعيد العمل</h2>
-                    <p class="mt-1.5 text-xs sm:text-sm text-slate-600">
-                        نستقبلكم في فرعي المنزلة والمطرية وفق المواعيد المحددة لكل عيادة
-                    </p>
+                    <span class="text-xs sm:text-sm font-bold text-[#0369A1]">محافظة الدقهلية</span>
+                    <h2 class="section-heading mt-1">عناوين ومواعيد العيادات</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                    <!-- البطاقة الأولى: عيادة المنزلة -->
-                    <article class="min-w-0 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-2xs flex flex-col justify-between space-y-4">
+                    <!-- عيادة المنزلة -->
+                    <article class="min-w-0 bg-white rounded-2xl p-5 sm:p-6 border border-[#E2E8F0] shadow-2xs flex flex-col justify-between gap-4">
                         <div class="space-y-4 min-w-0">
-                            <!-- رأس البطاقة: اسم العيادة ومواعيد العمل -->
                             <div class="pb-3.5 border-b border-slate-100">
                                 <div class="flex items-center justify-between gap-2">
-                                    <h3 class="text-lg font-extrabold text-[#0F172A]">عيادة المنزلة</h3>
-                                    <span class="text-xs font-bold bg-[#DFF0FC] text-[#0B3558] px-3 py-1 rounded-full shrink-0">
+                                    <h3 class="text-lg font-extrabold text-[#0F2537]">عيادة المنزلة</h3>
+                                    <span class="text-xs font-bold bg-[#DFF0FC] text-[#0B3B60] px-3 py-1 rounded-full shrink-0">
                                         فرع المنزلة
                                     </span>
                                 </div>
-                                <div class="mt-2.5 inline-flex items-center gap-2 bg-[#F0F8FF] border border-[#B8DDF7]/80 text-[#0B3558] rounded-xl px-3 py-1.5 text-xs sm:text-[13px] font-bold max-w-full">
+                                <!-- شارة المواعيد: أيقونة الساعة على يسار النص -->
+                                <div class="mt-2.5 inline-flex items-center gap-2 bg-[#F0F8FF] border border-[#BAE0FA]/80 text-[#0B3B60] rounded-xl px-3 py-1.5 text-xs sm:text-[13px] font-bold max-w-full">
                                     <span>يوميًا ما عدا الجمعة • من 1 ظهرًا إلى 6 مساءً</span>
-                                    <svg class="w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <circle cx="12" cy="12" r="10"/>
                                         <polyline points="12 6 12 12 16 14"/>
                                     </svg>
                                 </div>
                             </div>
 
-                            <!-- مربع العنوان مع أيقونة نسخ مدمجة في الزاوية (بدون أيقونة موقع بجانب كلمة العنوان) -->
-                            <div class="bg-[#F8FAFC] rounded-xl p-4 border border-slate-200/90 flex items-start justify-between gap-3">
+                            <!-- مربع العنوان مع زر نسخ مدمج على اليسار -->
+                            <div class="bg-[#F7FAFC] rounded-xl p-4 border border-[#E2E8F0] flex items-start justify-between gap-3">
                                 <div class="min-w-0">
-                                    <span class="block text-xs font-semibold text-slate-500 mb-1">العنوان</span>
-                                    <p class="text-sm font-bold text-[#0F172A] leading-relaxed">
-                                        المنزلة – المحطة – خلف مسجد الجرايحي – أعلى معمل د. محمد حال
+                                    <span class="block text-xs font-semibold text-[#475569] mb-1">العنوان</span>
+                                    <p class="text-sm font-bold text-[#0F2537] leading-relaxed">
+                                        المنزلة - المحطة - خلف مسجد الجرايحي - أعلى معمل د. محمد حال
                                     </p>
                                 </div>
                                 <button
                                     type="button"
-                                    data-copy-text="المنزلة – المحطة – خلف مسجد الجرايحي – أعلى معمل د. محمد حال"
+                                    data-copy-text="المنزلة - المحطة - خلف مسجد الجرايحي - أعلى معمل د. محمد حال"
                                     aria-label="نسخ عنوان عيادة المنزلة"
                                     title="نسخ العنوان"
-                                    class="copy-icon-btn shrink-0 w-9 h-9 rounded-lg bg-white hover:bg-[#DFF0FC] text-slate-500 hover:text-[#0B63A8] border border-slate-200 flex items-center justify-center transition-colors"
+                                    class="copy-icon-btn shrink-0 w-9 h-9 rounded-lg bg-white hover:bg-[#DFF0FC] text-[#475569] hover:text-[#0369A1] border border-[#E2E8F0] flex items-center justify-center transition-colors"
                                 >
-                                    <!-- أيقونة النسخ -->
                                     <svg class="icon-copy w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
                                         <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
                                     </svg>
-                                    <!-- أيقونة الصح عند النسخ -->
                                     <svg class="icon-check hidden w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
@@ -399,10 +378,12 @@
 
                         <!-- أزرار الإجراءات داخل البطاقة -->
                         <div class="clinic-actions-grid pt-1">
-                            <button
-                                type="button"
-                                data-clinic-map="manzala"
-                                class="smart-map-btn clinic-action-btn bg-[#0B63A8] hover:bg-[#084F88] text-white shadow-2xs"
+                            <!-- رابط Google Maps المباشر الموثّق لعيادة المنزلة بدون أي اعتراض JS -->
+                            <a
+                                href="https://maps.app.goo.gl/UG879ybUDzUvEQhHA?g_st=ic"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="clinic-action-btn bg-[#0369A1] hover:bg-[#075985] text-white shadow-2xs"
                             >
                                 <span>فتح العنوان على الخريطة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -410,62 +391,61 @@
                                     <polyline points="15 3 21 3 21 9"/>
                                     <line x1="10" x2="21" y1="14" y2="3"/>
                                 </svg>
-                            </button>
+                            </a>
 
                             <button
                                 type="button"
                                 data-quick-clinic="عيادة المنزلة"
-                                class="quick-clinic-btn clinic-action-btn bg-[#EBF5FD] hover:bg-[#D9EEFB] text-[#0B3558] border border-[#B8DDF7]"
+                                class="quick-clinic-btn clinic-action-btn bg-[#DFF0FC] hover:bg-[#CDE7FA] text-[#0B3B60] border border-[#BAE0FA]"
                             >
                                 <span>احجز في المنزلة</span>
-                                <svg class="w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="m15 18-6-6 6-6"/>
+                                <svg class="w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M19 12H5"/>
+                                    <path d="m12 19-7-7 7-7"/>
                                 </svg>
                             </button>
                         </div>
                     </article>
 
-                    <!-- البطاقة الثانية: عيادة المطرية -->
-                    <article class="min-w-0 bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-2xs flex flex-col justify-between space-y-4">
+                    <!-- عيادة المطرية -->
+                    <article class="min-w-0 bg-white rounded-2xl p-5 sm:p-6 border border-[#E2E8F0] shadow-2xs flex flex-col justify-between gap-4">
                         <div class="space-y-4 min-w-0">
-                            <!-- رأس البطاقة: اسم العيادة ومواعيد العمل -->
                             <div class="pb-3.5 border-b border-slate-100">
                                 <div class="flex items-center justify-between gap-2">
-                                    <h3 class="text-lg font-extrabold text-[#0F172A]">عيادة المطرية</h3>
-                                    <span class="text-xs font-bold bg-[#DFF0FC] text-[#0B3558] px-3 py-1 rounded-full shrink-0">
+                                    <h3 class="text-lg font-extrabold text-[#0F2537]">عيادة المطرية</h3>
+                                    <span class="text-xs font-bold bg-[#DFF0FC] text-[#0B3B60] px-3 py-1 rounded-full shrink-0">
                                         فرع المطرية
                                     </span>
                                 </div>
-                                <div class="mt-2.5 inline-flex items-center gap-2 bg-[#F0F8FF] border border-[#B8DDF7]/80 text-[#0B3558] rounded-xl px-3 py-1.5 text-xs sm:text-[13px] font-bold max-w-full">
+                                <!-- شارة المواعيد: أيقونة الساعة على يسار النص -->
+                                <div class="mt-2.5 inline-flex items-center gap-2 bg-[#F0F8FF] border border-[#BAE0FA]/80 text-[#0B3B60] rounded-xl px-3 py-1.5 text-xs sm:text-[13px] font-bold max-w-full">
                                     <span>يوميًا • من 8 مساءً إلى 11 مساءً</span>
-                                    <svg class="w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <circle cx="12" cy="12" r="10"/>
                                         <polyline points="12 6 12 12 16 14"/>
                                     </svg>
                                 </div>
                             </div>
 
-                            <!-- مربع العنوان مع أيقونة نسخ مدمجة في الزاوية -->
-                            <div class="bg-[#F8FAFC] rounded-xl p-4 border border-slate-200/90 flex items-start justify-between gap-3">
+                            <!-- مربع العنوان مع زر نسخ مدمج على اليسار -->
+                            <div class="bg-[#F7FAFC] rounded-xl p-4 border border-[#E2E8F0] flex items-start justify-between gap-3">
                                 <div class="min-w-0">
-                                    <span class="block text-xs font-semibold text-slate-500 mb-1">العنوان</span>
-                                    <p class="text-sm font-bold text-[#0F172A] leading-relaxed">
-                                        المطرية دقهلية – شارع سعد زغلول – أعلى مصوغات محمد الأزهري – عمارة أ/ صلاح جمعة
+                                    <span class="block text-xs font-semibold text-[#475569] mb-1">العنوان</span>
+                                    <p class="text-sm font-bold text-[#0F2537] leading-relaxed">
+                                        المطرية دقهلية - شارع سعد زغلول - أعلى مصوغات محمد الأزهري - عمارة أ/ صلاح جمعة
                                     </p>
                                 </div>
                                 <button
                                     type="button"
-                                    data-copy-text="المطرية دقهلية – شارع سعد زغلول – أعلى مصوغات محمد الأزهري – عمارة أ/ صلاح جمعة"
+                                    data-copy-text="المطرية دقهلية - شارع سعد زغلول - أعلى مصوغات محمد الأزهري - عمارة أ/ صلاح جمعة"
                                     aria-label="نسخ عنوان عيادة المطرية"
                                     title="نسخ العنوان"
-                                    class="copy-icon-btn shrink-0 w-9 h-9 rounded-lg bg-white hover:bg-[#DFF0FC] text-slate-500 hover:text-[#0B63A8] border border-slate-200 flex items-center justify-center transition-colors"
+                                    class="copy-icon-btn shrink-0 w-9 h-9 rounded-lg bg-white hover:bg-[#DFF0FC] text-[#475569] hover:text-[#0369A1] border border-[#E2E8F0] flex items-center justify-center transition-colors"
                                 >
-                                    <!-- أيقونة النسخ -->
                                     <svg class="icon-copy w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
                                         <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
                                     </svg>
-                                    <!-- أيقونة الصح عند النسخ -->
                                     <svg class="icon-check hidden w-4 h-4 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
@@ -475,10 +455,12 @@
 
                         <!-- أزرار الإجراءات داخل البطاقة -->
                         <div class="clinic-actions-grid pt-1">
-                            <button
-                                type="button"
-                                data-clinic-map="matareya"
-                                class="smart-map-btn clinic-action-btn bg-[#0B63A8] hover:bg-[#084F88] text-white shadow-2xs"
+                            <!-- رابط Google Maps المباشر الموثّق لعيادة المطرية بدون أي اعتراض JS -->
+                            <a
+                                href="https://maps.app.goo.gl/cbyb6EZTTNG6tZ7a9?g_st=ic"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="clinic-action-btn bg-[#0369A1] hover:bg-[#075985] text-white shadow-2xs"
                             >
                                 <span>فتح العنوان على الخريطة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -486,16 +468,17 @@
                                     <polyline points="15 3 21 3 21 9"/>
                                     <line x1="10" x2="21" y1="14" y2="3"/>
                                 </svg>
-                            </button>
+                            </a>
 
                             <button
                                 type="button"
                                 data-quick-clinic="عيادة المطرية"
-                                class="quick-clinic-btn clinic-action-btn bg-[#EBF5FD] hover:bg-[#D9EEFB] text-[#0B3558] border border-[#B8DDF7]"
+                                class="quick-clinic-btn clinic-action-btn bg-[#DFF0FC] hover:bg-[#CDE7FA] text-[#0B3B60] border border-[#BAE0FA]"
                             >
                                 <span>احجز في المطرية</span>
-                                <svg class="w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="m15 18-6-6 6-6"/>
+                                <svg class="w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M19 12H5"/>
+                                    <path d="m12 19-7-7 7-7"/>
                                 </svg>
                             </button>
                         </div>
@@ -507,33 +490,34 @@
 
         <!-- =========================================================
              3. قسم التخصصات والخدمات الطبية (#services)
-             6 بطاقات متوازنة تبدأ بالكشف العام ويليه كشف الحول
+             الترتيب الدقيق: 1) كشف عام 2) جراحات تجميل العيون 3) القنوات الدمعية والحجاج
+                            4) عمليات المياه البيضاء 5) تصحيح الإبصار والفيمتو ليزر 6) كشف الحول
         ========================================================== -->
-        <section id="services" class="py-10 sm:py-14 bg-white border-b border-slate-200/90">
+        <section id="services" class="py-11 sm:py-14 bg-white border-b border-[#E2E8F0]">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-7 sm:mb-9">
-                    <span class="text-xs sm:text-sm font-semibold text-[#0B63A8]">الرعاية الطبية المتخصصة</span>
-                    <h2 class="section-heading text-[#0F172A] mt-1">التخصصات والخدمات الطبية</h2>
+                    <span class="text-xs sm:text-sm font-bold text-[#0369A1]">الرعاية الطبية المتخصصة</span>
+                    <h2 class="section-heading mt-1">التخصصات والخدمات الطبية</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                     <!-- 1. كشف عام وفحص شامل للعين -->
-                    <article class="min-w-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200 hover:border-[#0B63A8]/45 transition-colors flex flex-col justify-between">
+                    <article class="min-w-0 bg-[#F7FAFC] rounded-2xl p-5 border border-[#E2E8F0] hover:border-[#0369A1]/45 transition-colors flex flex-col justify-between">
                         <div>
-                            <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 text-[#0B63A8] flex items-center justify-center mb-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0] text-[#0369A1] flex items-center justify-center mb-3.5">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M9 11l3 3L22 4"/>
                                     <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-[#0F172A]">كشف عام وفحص شامل للعين</h3>
-                            <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                                فحص دقيق لحدة الإبصار وقاع العين وقياس ضغط العين وتشخيص أمراض العيون.
+                            <h3 class="text-base font-bold text-[#0F2537]">كشف عام وفحص شامل للعين</h3>
+                            <p class="mt-1.5 text-sm text-[#475569] leading-relaxed">
+                                فحص شامل لقاع العين، قياس ضغط العين، وتقييم حدة الإبصار والنظارات الطبية بدقة عالية.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3.5 border-t border-slate-200/80">
-                            <button type="button" data-specialty="كشف عام وفحص شامل للعين" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0B63A8] hover:text-[#084F88] py-1 transition-colors">
+                        <div class="mt-4 pt-3.5 border-t border-[#E2E8F0]">
+                            <button type="button" data-specialty="كشف عام وفحص شامل للعين" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0369A1] hover:text-[#075985] py-1 transition-colors">
                                 <span>احجز استشارة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m15 18-6-6 6-6"/>
@@ -542,35 +526,10 @@
                         </div>
                     </article>
 
-                    <!-- 2. كشف الحول (الخدمة الجديدة) -->
-                    <article class="min-w-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200 hover:border-[#0B63A8]/45 transition-colors flex flex-col justify-between">
+                    <!-- 2. جراحات تجميل العيون -->
+                    <article class="min-w-0 bg-[#F7FAFC] rounded-2xl p-5 border border-[#E2E8F0] hover:border-[#0369A1]/45 transition-colors flex flex-col justify-between">
                         <div>
-                            <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 text-[#0B63A8] flex items-center justify-center mb-3.5">
-                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <circle cx="12" cy="12" r="6"/>
-                                    <circle cx="12" cy="12" r="2"/>
-                                </svg>
-                            </div>
-                            <h3 class="text-base font-bold text-[#0F172A]">كشف الحول</h3>
-                            <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                                تشخيص وعلاج حالات الحول لدى الأطفال والبالغين ومتابعة حركة عضلات العين بدقة.
-                            </p>
-                        </div>
-                        <div class="mt-4 pt-3.5 border-t border-slate-200/80">
-                            <button type="button" data-specialty="كشف الحول" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0B63A8] hover:text-[#084F88] py-1 transition-colors">
-                                <span>احجز استشارة</span>
-                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="m15 18-6-6 6-6"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- 3. جراحات تجميل العيون والجفون -->
-                    <article class="min-w-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200 hover:border-[#0B63A8]/45 transition-colors flex flex-col justify-between">
-                        <div>
-                            <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 text-[#0B63A8] flex items-center justify-center mb-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0] text-[#0369A1] flex items-center justify-center mb-3.5">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M12 3v3"/>
                                     <path d="M12 18v3"/>
@@ -579,13 +538,13 @@
                                     <circle cx="12" cy="12" r="4"/>
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-[#0F172A]">جراحات تجميل العيون والجفون</h3>
-                            <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                                علاج ارتخاء الجفون وتجميل محيط العين بأحدث الأساليب الجراحية الدقيقة.
+                            <h3 class="text-base font-bold text-[#0F2537]">جراحات تجميل العيون</h3>
+                            <p class="mt-1.5 text-sm text-[#475569] leading-relaxed">
+                                إصلاح ارتخاء الجفون، تجميل الجفون العلوية والسفلية، وإعادة بناء الجفون بأحدث الأساليب الدقيقة.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3.5 border-t border-slate-200/80">
-                            <button type="button" data-specialty="جراحات تجميل العيون والجفون" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0B63A8] hover:text-[#084F88] py-1 transition-colors">
+                        <div class="mt-4 pt-3.5 border-t border-[#E2E8F0]">
+                            <button type="button" data-specialty="جراحات تجميل العيون" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0369A1] hover:text-[#075985] py-1 transition-colors">
                                 <span>احجز استشارة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m15 18-6-6 6-6"/>
@@ -594,21 +553,21 @@
                         </div>
                     </article>
 
-                    <!-- 4. القنوات الدمعية والحجاج -->
-                    <article class="min-w-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200 hover:border-[#0B63A8]/45 transition-colors flex flex-col justify-between">
+                    <!-- 3. القنوات الدمعية والحجاج -->
+                    <article class="min-w-0 bg-[#F7FAFC] rounded-2xl p-5 border border-[#E2E8F0] hover:border-[#0369A1]/45 transition-colors flex flex-col justify-between">
                         <div>
-                            <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 text-[#0B63A8] flex items-center justify-center mb-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0] text-[#0369A1] flex items-center justify-center mb-3.5">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-[#0F172A]">القنوات الدمعية والحجاج</h3>
-                            <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                                علاج انسداد القنوات الدمعية وجراحات كسور وأورام الحجاج.
+                            <h3 class="text-base font-bold text-[#0F2537]">القنوات الدمعية والحجاج</h3>
+                            <p class="mt-1.5 text-sm text-[#475569] leading-relaxed">
+                                علاج انسداد القنوات الدمعية، والتعامل الجراحي الدقيق مع كسور وأورام الحجاج.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3.5 border-t border-slate-200/80">
-                            <button type="button" data-specialty="القنوات الدمعية وكسور وأورام الحجاج" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0B63A8] hover:text-[#084F88] py-1 transition-colors">
+                        <div class="mt-4 pt-3.5 border-t border-[#E2E8F0]">
+                            <button type="button" data-specialty="القنوات الدمعية والحجاج" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0369A1] hover:text-[#075985] py-1 transition-colors">
                                 <span>احجز استشارة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m15 18-6-6 6-6"/>
@@ -617,22 +576,22 @@
                         </div>
                     </article>
 
-                    <!-- 5. عمليات المياه البيضاء بدون جراحة -->
-                    <article class="min-w-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200 hover:border-[#0B63A8]/45 transition-colors flex flex-col justify-between">
+                    <!-- 4. عمليات المياه البيضاء -->
+                    <article class="min-w-0 bg-[#F7FAFC] rounded-2xl p-5 border border-[#E2E8F0] hover:border-[#0369A1]/45 transition-colors flex flex-col justify-between">
                         <div>
-                            <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 text-[#0B63A8] flex items-center justify-center mb-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0] text-[#0369A1] flex items-center justify-center mb-3.5">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <circle cx="12" cy="12" r="9"/>
                                     <circle cx="12" cy="12" r="3.5"/>
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-[#0F172A]">عمليات المياه البيضاء بدون جراحة</h3>
-                            <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                                إزالة المياه البيضاء بالموجات فوق الصوتية وزراعة أحدث العدسات.
+                            <h3 class="text-base font-bold text-[#0F2537]">عمليات المياه البيضاء</h3>
+                            <p class="mt-1.5 text-sm text-[#475569] leading-relaxed">
+                                إزالة المياه البيضاء بدون جراحة وبأحدث تقنيات الموجات فوق الصوتية وزراعة العدسات.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3.5 border-t border-slate-200/80">
-                            <button type="button" data-specialty="عمليات المياه البيضاء بدون جراحة" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0B63A8] hover:text-[#084F88] py-1 transition-colors">
+                        <div class="mt-4 pt-3.5 border-t border-[#E2E8F0]">
+                            <button type="button" data-specialty="عمليات المياه البيضاء" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0369A1] hover:text-[#075985] py-1 transition-colors">
                                 <span>احجز استشارة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m15 18-6-6 6-6"/>
@@ -641,21 +600,46 @@
                         </div>
                     </article>
 
-                    <!-- 6. تصحيح الإبصار بالفيمتو ليزر -->
-                    <article class="min-w-0 bg-[#F8FAFC] rounded-2xl p-5 border border-slate-200 hover:border-[#0B63A8]/45 transition-colors flex flex-col justify-between">
+                    <!-- 5. تصحيح الإبصار والفيمتو ليزر -->
+                    <article class="min-w-0 bg-[#F7FAFC] rounded-2xl p-5 border border-[#E2E8F0] hover:border-[#0369A1]/45 transition-colors flex flex-col justify-between">
                         <div>
-                            <div class="w-9 h-9 rounded-xl bg-white border border-slate-200/80 text-[#0B63A8] flex items-center justify-center mb-3.5">
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0] text-[#0369A1] flex items-center justify-center mb-3.5">
                                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
                                 </svg>
                             </div>
-                            <h3 class="text-base font-bold text-[#0F172A]">تصحيح الإبصار بالفيمتو ليزر</h3>
-                            <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
-                                التخلص من النظارة الطبية بأحدث تقنيات الليزك والفيمتو ليزر.
+                            <h3 class="text-base font-bold text-[#0F2537]">تصحيح الإبصار والفيمتو ليزر</h3>
+                            <p class="mt-1.5 text-sm text-[#475569] leading-relaxed">
+                                تصحيح قصر وطول النظر والاستجماتيزم بأحدث تقنيات الليزر والفيمتو ليزر.
                             </p>
                         </div>
-                        <div class="mt-4 pt-3.5 border-t border-slate-200/80">
-                            <button type="button" data-specialty="تصحيح الإبصار بالفيمتو ليزر" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0B63A8] hover:text-[#084F88] py-1 transition-colors">
+                        <div class="mt-4 pt-3.5 border-t border-[#E2E8F0]">
+                            <button type="button" data-specialty="تصحيح الإبصار والفيمتو ليزر" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0369A1] hover:text-[#075985] py-1 transition-colors">
+                                <span>احجز استشارة</span>
+                                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="m15 18-6-6 6-6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- 6. كشف الحول (آخر عنصر كما هو مطلوب) -->
+                    <article class="min-w-0 bg-[#F7FAFC] rounded-2xl p-5 border border-[#E2E8F0] hover:border-[#0369A1]/45 transition-colors flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-white border border-[#E2E8F0] text-[#0369A1] flex items-center justify-center mb-3.5">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="6"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-bold text-[#0F2537]">كشف الحول</h3>
+                            <p class="mt-1.5 text-sm text-[#475569] leading-relaxed">
+                                تشخيص وعلاج حالات الحول لدى الأطفال والكبار ومتابعة كسل العين بدقة.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3.5 border-t border-[#E2E8F0]">
+                            <button type="button" data-specialty="كشف الحول" class="service-book-btn inline-flex items-center gap-1.5 text-sm font-bold text-[#0369A1] hover:text-[#075985] py-1 transition-colors">
                                 <span>احجز استشارة</span>
                                 <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m15 18-6-6 6-6"/>
@@ -671,21 +655,25 @@
         <!-- =========================================================
              4. نموذج الحجز عبر واتساب (#booking)
              الترتيب: 1) الاسم بالكامل 2) اختر العيادة 3) نوع الكشف 4) يوم الحجز
-             يرسل مباشرة لرقم الدكتور على واتساب: 201009079363
+             قوائم منسدلة مخصصة بالكامل داخل الصفحة بدون قوائم المتصفح الافتراضية
         ========================================================== -->
-        <section id="booking" class="py-10 sm:py-14 bg-[#F6F9FC]">
+        <section id="booking" class="py-11 sm:py-14 bg-[#F7FAFC]">
             <div class="max-w-xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-7">
-                    <span class="text-xs sm:text-sm font-semibold text-[#0B63A8]">حجز المواعيد</span>
-                    <h2 class="section-heading text-[#0F172A] mt-1">احجز موعدك عبر واتساب</h2>
+                    <span class="text-xs sm:text-sm font-bold text-[#0369A1]">حجز المواعيد</span>
+                    <h2 class="section-heading mt-1">احجز موعدك عبر واتساب</h2>
+                    <p class="mt-1.5 text-xs sm:text-sm text-[#475569]">
+                        أدخل بياناتك واختر العيادة واليوم المناسب لتأكيد الحجز مباشرة.
+                    </p>
                 </div>
 
-                <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-7 shadow-2xs">
-                    <form id="booking-form" class="space-y-4" novalidate>
+                <!-- overflow-visible لضمان عدم قص أي قائمة منسدلة داخل البطاقة -->
+                <div class="bg-white rounded-2xl border border-[#E2E8F0] p-5 sm:p-7 shadow-2xs overflow-visible">
+                    <form id="booking-form" class="space-y-4 overflow-visible" novalidate>
 
                         <!-- 1) الاسم بالكامل -->
                         <div>
-                            <label for="patient-name" class="block text-sm font-bold text-[#0F172A] mb-1.5">
+                            <label for="patient-name" class="block text-sm font-bold text-[#0F2537] mb-1.5">
                                 الاسم بالكامل <span class="text-red-500">*</span>
                             </label>
                             <input
@@ -693,18 +681,18 @@
                                 id="patient-name"
                                 name="patientName"
                                 required
-                                placeholder="اكتب اسم المريض بالكامل"
+                                placeholder="اكتب اسم المريض ثلاثي"
                                 autocomplete="name"
-                                class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F8FAFC] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0B63A8]/25 focus:border-[#0B63A8] text-sm font-semibold text-[#0F172A] transition-colors"
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F7FAFC] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0369A1]/25 focus:border-[#0369A1] text-sm font-semibold text-[#0F2537] transition-colors"
                             >
                             <p id="error-name" class="hidden mt-1.5 text-xs font-bold text-red-600">
-                                يرجى إدخال اسم المريض بالكامل أولاً
+                                يرجى إدخال اسم المريض بالكامل أولًا
                             </p>
                         </div>
 
-                        <!-- 2) اختر العيادة (يبدأ غير محدد وبأسماء العيادات فقط دون مواعيد) -->
-                        <div class="relative custom-select" id="select-clinic">
-                            <span id="label-clinic" class="block text-sm font-bold text-[#0F172A] mb-1.5">
+                        <!-- 2) اختر العيادة (تبدأ غير محددة، بدون مواعيد وبدون أيقونات موقع) -->
+                        <div class="custom-select" id="select-clinic">
+                            <span id="label-clinic" class="block text-sm font-bold text-[#0F2537] mb-1.5">
                                 اختر العيادة <span class="text-red-500">*</span>
                             </span>
                             <input type="hidden" id="input-clinic" value="">
@@ -715,41 +703,41 @@
                                 aria-haspopup="listbox"
                                 aria-expanded="false"
                                 aria-labelledby="label-clinic"
-                                class="select-trigger w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F8FAFC] hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0B63A8]/25 focus:border-[#0B63A8] text-sm font-semibold text-slate-500 flex items-center justify-between transition-colors"
+                                class="select-trigger w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F7FAFC] hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0369A1]/25 focus:border-[#0369A1] text-sm font-semibold text-slate-500 flex items-center justify-between transition-colors"
                             >
                                 <span class="select-label truncate">اختر العيادة</span>
-                                <svg class="select-chevron w-4 h-4 text-slate-500 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <svg class="select-chevron w-4 h-4 text-[#475569] shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m6 9 6 6 6-6"/>
                                 </svg>
                             </button>
 
-                            <div role="listbox" class="custom-select-menu menu-closed select-menu absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-slate-200 shadow-lg p-1.5 z-40 space-y-1">
-                                <button type="button" role="option" aria-selected="false" data-value="عيادة المنزلة" data-key="manzala" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                            <div role="listbox" class="custom-select-menu menu-closed select-menu absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-[#E2E8F0] shadow-xl p-1.5 z-50 space-y-1">
+                                <button type="button" role="option" aria-selected="false" data-value="عيادة المنزلة" data-key="manzala" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>عيادة المنزلة</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="عيادة المطرية" data-key="matareya" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="عيادة المطرية" data-key="matareya" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>عيادة المطرية</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
                             </div>
 
                             <p id="error-clinic" class="hidden mt-1.5 text-xs font-bold text-red-600">
-                                يرجى اختيار العيادة أولاً
+                                يرجى اختيار العيادة أولًا قبل تأكيد الحجز
                             </p>
                         </div>
 
-                        <!-- 3) نوع الكشف (يبدأ بالكشف العام ويليه كشف الحول وبدون أيقونات عين) -->
-                        <div class="relative custom-select" id="select-service">
-                            <span id="label-service" class="block text-sm font-bold text-[#0F172A] mb-1.5">
+                        <!-- 3) نوع الكشف (بنفس ترتيب التخصصات الست بالضبط وبدون أيقونات عين) -->
+                        <div class="custom-select" id="select-service">
+                            <span id="label-service" class="block text-sm font-bold text-[#0F2537] mb-1.5">
                                 نوع الكشف <span class="text-red-500">*</span>
                             </span>
-                            <input type="hidden" id="input-service" value="كشف عام وفحص شامل للعين">
+                            <input type="hidden" id="input-service" value="">
 
                             <button
                                 type="button"
@@ -757,66 +745,66 @@
                                 aria-haspopup="listbox"
                                 aria-expanded="false"
                                 aria-labelledby="label-service"
-                                class="select-trigger w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F8FAFC] hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0B63A8]/25 focus:border-[#0B63A8] text-sm font-semibold text-[#0F172A] flex items-center justify-between transition-colors"
+                                class="select-trigger w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F7FAFC] hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0369A1]/25 focus:border-[#0369A1] text-sm font-semibold text-slate-500 flex items-center justify-between transition-colors"
                             >
-                                <span class="select-label truncate">كشف عام وفحص شامل للعين</span>
-                                <svg class="select-chevron w-4 h-4 text-slate-500 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <span class="select-label truncate">اختر نوع الكشف</span>
+                                <svg class="select-chevron w-4 h-4 text-[#475569] shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m6 9 6 6 6-6"/>
                                 </svg>
                             </button>
 
-                            <div role="listbox" class="custom-select-menu menu-closed select-menu absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-slate-200 shadow-lg p-1.5 z-40 max-h-64 overflow-y-auto space-y-1">
-                                <button type="button" role="option" aria-selected="true" data-value="كشف عام وفحص شامل للعين" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold bg-[#F0F8FF] text-[#0B63A8] hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                            <div role="listbox" class="custom-select-menu menu-closed select-menu absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-[#E2E8F0] shadow-xl p-1.5 z-50 max-h-64 overflow-y-auto space-y-1">
+                                <button type="button" role="option" aria-selected="false" data-value="كشف عام وفحص شامل للعين" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>كشف عام وفحص شامل للعين</span>
-                                    <svg class="select-check w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="كشف الحول" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="جراحات تجميل العيون" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
+                                    <span>جراحات تجميل العيون</span>
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"/>
+                                    </svg>
+                                </button>
+
+                                <button type="button" role="option" aria-selected="false" data-value="القنوات الدمعية والحجاج" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
+                                    <span>القنوات الدمعية والحجاج</span>
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"/>
+                                    </svg>
+                                </button>
+
+                                <button type="button" role="option" aria-selected="false" data-value="عمليات المياه البيضاء" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
+                                    <span>عمليات المياه البيضاء</span>
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"/>
+                                    </svg>
+                                </button>
+
+                                <button type="button" role="option" aria-selected="false" data-value="تصحيح الإبصار والفيمتو ليزر" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
+                                    <span>تصحيح الإبصار والفيمتو ليزر</span>
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M20 6 9 17l-5-5"/>
+                                    </svg>
+                                </button>
+
+                                <button type="button" role="option" aria-selected="false" data-value="كشف الحول" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>كشف الحول</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M20 6 9 17l-5-5"/>
-                                    </svg>
-                                </button>
-
-                                <button type="button" role="option" aria-selected="false" data-value="جراحات تجميل العيون والجفون" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
-                                    <span>جراحات تجميل العيون والجفون</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M20 6 9 17l-5-5"/>
-                                    </svg>
-                                </button>
-
-                                <button type="button" role="option" aria-selected="false" data-value="القنوات الدمعية وكسور وأورام الحجاج" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
-                                    <span>القنوات الدمعية وكسور وأورام الحجاج</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M20 6 9 17l-5-5"/>
-                                    </svg>
-                                </button>
-
-                                <button type="button" role="option" aria-selected="false" data-value="عمليات المياه البيضاء بدون جراحة" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
-                                    <span>عمليات المياه البيضاء بدون جراحة</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <path d="M20 6 9 17l-5-5"/>
-                                    </svg>
-                                </button>
-
-                                <button type="button" role="option" aria-selected="false" data-value="تصحيح الإبصار بالفيمتو ليزر" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
-                                    <span>تصحيح الإبصار بالفيمتو ليزر</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
                             </div>
 
                             <p id="error-service" class="hidden mt-1.5 text-xs font-bold text-red-600">
-                                يرجى اختيار نوع الكشف
+                                يرجى اختيار نوع الكشف المطلوب
                             </p>
                         </div>
 
-                        <!-- 4) يوم الحجز (مطلوب - مع تعطيل الجمعة تلقائيًا عند اختيار عيادة المنزلة) -->
-                        <div class="relative custom-select" id="select-day">
-                            <span id="label-day" class="block text-sm font-bold text-[#0F172A] mb-1.5">
+                        <!-- 4) يوم الحجز (مع قاعدة تعطيل الجمعة تلقائيًا لعيادة المنزلة) -->
+                        <div class="custom-select" id="select-day">
+                            <span id="label-day" class="block text-sm font-bold text-[#0F2537] mb-1.5">
                                 يوم الحجز <span class="text-red-500">*</span>
                             </span>
                             <input type="hidden" id="input-day" value="">
@@ -827,80 +815,80 @@
                                 aria-haspopup="listbox"
                                 aria-expanded="false"
                                 aria-labelledby="label-day"
-                                class="select-trigger w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F8FAFC] hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0B63A8]/25 focus:border-[#0B63A8] text-sm font-semibold text-slate-500 flex items-center justify-between transition-colors"
+                                class="select-trigger w-full px-4 py-3 rounded-xl border border-slate-300 bg-[#F7FAFC] hover:bg-white focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0369A1]/25 focus:border-[#0369A1] text-sm font-semibold text-slate-500 flex items-center justify-between transition-colors"
                             >
-                                <span class="select-label truncate">اختر يوم الحجز</span>
-                                <svg class="select-chevron w-4 h-4 text-slate-500 shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <span class="select-label truncate">اختر اليوم المناسب</span>
+                                <svg class="select-chevron w-4 h-4 text-[#475569] shrink-0 transition-transform duration-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                     <path d="m6 9 6 6 6-6"/>
                                 </svg>
                             </button>
 
-                            <div role="listbox" class="custom-select-menu menu-closed select-menu absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-slate-200 shadow-lg p-1.5 z-40 max-h-64 overflow-y-auto space-y-1">
-                                <button type="button" role="option" aria-selected="false" data-value="السبت" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                            <div role="listbox" class="custom-select-menu menu-closed select-menu absolute left-0 right-0 mt-1.5 bg-white rounded-xl border border-[#E2E8F0] shadow-xl p-1.5 z-50 max-h-64 overflow-y-auto space-y-1">
+                                <button type="button" role="option" aria-selected="false" data-value="السبت" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>السبت</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="الأحد" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="الأحد" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>الأحد</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="الإثنين" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="الإثنين" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>الإثنين</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="الثلاثاء" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="الثلاثاء" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>الثلاثاء</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="الأربعاء" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="الأربعاء" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>الأربعاء</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
-                                <button type="button" role="option" aria-selected="false" data-value="الخميس" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" data-value="الخميس" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span>الخميس</span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
 
                                 <!-- خيار الجمعة يتعطل تلقائيًا عند اختيار عيادة المنزلة -->
-                                <button type="button" role="option" aria-selected="false" id="option-friday" data-value="الجمعة" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-[#F0F8FF] hover:text-[#0B63A8] text-right transition-colors">
+                                <button type="button" role="option" aria-selected="false" id="option-friday" data-value="الجمعة" class="select-option w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold text-[#0F2537] hover:bg-[#F0F8FF] hover:text-[#0369A1] text-right transition-colors">
                                     <span class="inline-flex items-center gap-1.5">
                                         <span>الجمعة</span>
                                         <span id="friday-off-label" class="hidden text-xs font-medium text-slate-400">(إجازة في المنزلة)</span>
                                     </span>
-                                    <svg class="select-check hidden w-4 h-4 text-[#0B63A8] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <svg class="select-check hidden w-4 h-4 text-[#0369A1] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                         <path d="M20 6 9 17l-5-5"/>
                                     </svg>
                                 </button>
                             </div>
 
                             <p id="error-day" class="hidden mt-1.5 text-xs font-bold text-red-600">
-                                يرجى اختيار يوم الحجز
+                                يرجى اختيار اليوم المناسب للحجز
                             </p>
                             <p id="friday-cleared-note" class="hidden mt-1.5 text-xs font-semibold text-amber-700">
                                 الجمعة إجازة في عيادة المنزلة، يرجى اختيار يوم آخر
                             </p>
                         </div>
 
-                        <!-- زر الإرسال بعرض كامل مع شعار واتساب الأصلي على يسار النص -->
+                        <!-- زر التأكيد بعرض كامل مع شعار واتساب الرسمي على يسار النص -->
                         <div class="pt-2">
-                            <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-[#128C7E] hover:bg-[#0E7468] active:scale-[0.99] text-white font-bold py-3.5 px-5 rounded-xl shadow-xs transition-all text-sm sm:text-[15px]">
+                            <button type="submit" class="w-full inline-flex items-center justify-center gap-2.5 bg-[#0F766E] hover:bg-[#115E59] active:scale-[0.99] text-white font-bold py-3.5 px-5 rounded-xl shadow-xs transition-all text-sm sm:text-[15px]">
                                 <span>تأكيد الحجز عبر واتساب</span>
                                 <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path d="M12.031 2C6.515 2 2.062 6.453 2.062 11.969c0 1.758.459 3.473 1.331 4.985L2 22l5.184-1.359a9.927 9.927 0 0 0 4.847 1.262h.004c5.515 0 9.968-4.453 9.968-9.969A9.936 9.936 0 0 0 19.08 4.92 9.903 9.903 0 0 0 12.031 2zm0 18.215h-.003a8.248 8.248 0 0 1-4.205-1.152l-.302-.179-3.128.82.835-3.049-.197-.313a8.22 8.22 0 0 1-1.262-4.373c0-4.555 3.707-8.262 8.264-8.262 2.207 0 4.281.86 5.841 2.422a8.208 8.208 0 0 1 2.419 5.842c-.002 4.556-3.708 8.244-8.262 8.244zm4.532-6.183c-.248-.124-1.469-.725-1.696-.808-.228-.083-.393-.124-.559.124-.165.248-.641.808-.786.973-.145.166-.29.186-.538.062-.248-.124-1.048-.386-1.996-1.231-.738-.658-1.236-1.471-1.381-1.719-.145-.248-.015-.382.109-.506.112-.111.248-.29.372-.435.124-.145.165-.248.248-.414.083-.165.041-.31-.021-.434-.062-.124-.559-1.346-.766-1.843-.202-.484-.407-.418-.559-.426l-.476-.008c-.166 0-.434.062-.662.31-.228.248-.869.849-.869 2.071 0 1.222.89 2.402 1.014 2.568.124.165 1.751 2.674 4.242 3.749.593.256 1.055.409 1.416.523.595.189 1.137.162 1.565.098.477-.071 1.469-.6 1.676-1.18.207-.58.207-1.077.145-1.18-.062-.104-.228-.166-.476-.29z"/>
@@ -915,110 +903,93 @@
     </main>
 
     <!-- =========================================================
-         5. البطاقة الختامية المعمارية المميزة (ARCHITECTURAL HIGHLIGHT FOOTER)
-         3 أرقام هاتف واضحة للمكالمات فقط (عيادة المطرية، عيادة المنزلة، طوارئ)
-         + حسابات فيسبوك وإنستجرام فقط
+         5. البطاقة الختامية المعمارية المميزة (Highlighted Architectural Footer Card)
+         أرقام المكالمات الثلاثة (عيادة المطرية، عيادة المنزلة، طوارئ) + فيسبوك وإنستجرام فقط
     ========================================================== -->
-    <footer class="py-10 sm:py-14 px-4 sm:px-6 bg-slate-100 border-t border-slate-200/90">
+    <footer class="py-10 sm:py-14 px-4 sm:px-6 bg-[#EEF3F8] border-t border-[#E2E8F0]">
         <div class="max-w-3xl mx-auto">
-            <div class="footer-highlight-card p-6 sm:p-8 text-white space-y-6">
+            <div class="architectural-footer-card p-6 sm:p-8 text-white">
+                <div class="relative z-10 space-y-6">
 
-                <!-- اسم الدكتور والمؤهل -->
-                <div class="text-center pb-5 border-b border-white/10">
-                    <h2 class="text-base sm:text-xl font-extrabold text-white">
-                        د. إسلام طاهر رجب
-                    </h2>
-                    <p class="mt-1.5 text-xs sm:text-sm text-sky-200/90 font-medium">
-                        دكتوراة واستشاري طب وجراحة العيون – جامعة المنصورة
-                    </p>
-                </div>
+                    <!-- اسم الدكتور والمؤهل العلمي -->
+                    <div class="text-center pb-5 border-b border-white/10">
+                        <h2 class="text-lg sm:text-xl font-extrabold text-white">
+                            د. إسلام طاهر
+                        </h2>
+                        <p class="mt-1.5 text-xs sm:text-sm text-sky-200/90 font-medium">
+                            دكتوراة واستشاري طب وجراحة العيون – جامعة المنصورة
+                        </p>
+                    </div>
 
-                <!-- شبكة أرقام التواصل المباشرة (3 بطاقات زجاجية داكنة للمكالمات فقط دون كتابة اتصال أو واتساب) -->
-                <div class="space-y-2.5">
-                    <div class="footer-phones-grid">
+                    <!-- شبكة أرقام المكالمات المباشرة (3 بطاقات زجاجية داكنة، الأيقونة على اليسار، بدون كلمتي اتصال أو واتساب) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
 
-                        <!-- 1) رقم عيادة المطرية -->
-                        <a href="tel:+201060053432" class="group rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-sky-300/40 px-4 py-3.5 transition-colors flex flex-col justify-between gap-2 min-w-0">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="text-xs font-bold text-sky-200">عيادة المطرية</span>
-                                <svg class="w-4 h-4 text-sky-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
+                        <!-- 1) عيادة المطرية -->
+                        <a href="tel:+201060053432" class="min-w-0 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-sky-300/40 px-4 py-3.5 transition-colors flex items-center justify-between gap-3">
+                            <div class="min-w-0 text-right">
+                                <span class="block text-xs font-bold text-sky-200">عيادة المطرية</span>
+                                <span dir="ltr" class="mt-1 block text-right text-[15px] font-extrabold tracking-wide text-white">01060053432</span>
                             </div>
-                            <span dir="ltr" class="block text-right text-[15px] font-extrabold tracking-wide text-white">01060053432</span>
+                            <svg class="w-4 h-4 text-sky-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                         </a>
 
-                        <!-- 2) رقم عيادة المنزلة -->
-                        <a href="tel:+201559170010" class="group rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-sky-300/40 px-4 py-3.5 transition-colors flex flex-col justify-between gap-2 min-w-0">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="text-xs font-bold text-sky-200">عيادة المنزلة</span>
-                                <svg class="w-4 h-4 text-sky-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
+                        <!-- 2) عيادة المنزلة -->
+                        <a href="tel:+201559170010" class="min-w-0 rounded-2xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 hover:border-sky-300/40 px-4 py-3.5 transition-colors flex items-center justify-between gap-3">
+                            <div class="min-w-0 text-right">
+                                <span class="block text-xs font-bold text-sky-200">عيادة المنزلة</span>
+                                <span dir="ltr" class="mt-1 block text-right text-[15px] font-extrabold tracking-wide text-white">01559170010</span>
                             </div>
-                            <span dir="ltr" class="block text-right text-[15px] font-extrabold tracking-wide text-white">01559170010</span>
+                            <svg class="w-4 h-4 text-sky-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                         </a>
 
-                        <!-- 3) رقم الطوارئ بتمييز هادئ وواضح -->
-                        <a href="tel:+201009079363" class="group rounded-2xl bg-rose-500/[0.12] hover:bg-rose-500/[0.2] border border-rose-400/35 hover:border-rose-300/60 px-4 py-3.5 transition-colors flex flex-col justify-between gap-2 min-w-0">
-                            <div class="flex items-center justify-between gap-2">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-rose-500/25 text-rose-100 border border-rose-400/35">طوارئ</span>
-                                <svg class="w-4 h-4 text-rose-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
+                        <!-- 3) طوارئ بتمييز دافئ وواضح -->
+                        <a href="tel:+201009079363" class="min-w-0 rounded-2xl bg-rose-500/[0.13] hover:bg-rose-500/[0.22] border border-rose-400/35 hover:border-rose-300/60 px-4 py-3.5 transition-colors flex items-center justify-between gap-3">
+                            <div class="min-w-0 text-right">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/25 text-rose-100 border border-rose-400/35">طوارئ</span>
+                                <span dir="ltr" class="mt-1 block text-right text-[15px] font-extrabold tracking-wide text-white">01009079363</span>
                             </div>
-                            <span dir="ltr" class="block text-right text-[15px] font-extrabold tracking-wide text-white">01009079363</span>
+                            <svg class="w-4 h-4 text-rose-300 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
                         </a>
 
                     </div>
+
+                    <!-- روابط التواصل الاجتماعي الرسمية فقط (فيسبوك وإنستجرام، الأيقونة على يسار النص) -->
+                    <div class="grid grid-cols-1 min-[400px]:grid-cols-2 gap-3">
+                        <a href="https://www.facebook.com/share/1EPGUrGrmU/" target="_blank" rel="noopener noreferrer" class="clinic-action-btn bg-white/[0.06] hover:bg-[#1877F2]/25 border border-white/15 hover:border-[#1877F2]/50 text-white">
+                            <span>فيسبوك</span>
+                            <svg class="w-4 h-4 text-sky-300 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M22 12.06C22 6.504 17.523 2 12 2S2 6.504 2 12.06c0 5.022 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.522 1.492-3.915 3.777-3.915 1.094 0 2.238.197 2.238.197v2.476h-1.26c-1.243 0-1.63.775-1.63 1.57v1.887h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.918 8.437-9.94z"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.instagram.com/dr.islam.taher?knvt=MW1vMGQyYzhoZ3Q2aw==" target="_blank" rel="noopener noreferrer" class="clinic-action-btn bg-white/[0.06] hover:bg-pink-500/25 border border-white/15 hover:border-pink-400/50 text-white">
+                            <span>إنستجرام</span>
+                            <svg class="w-4 h-4 text-pink-300 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- حقوق الملكية -->
+                    <div class="pt-5 border-t border-white/10 text-center">
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            © 2026 عيادة د. إسلام طاهر للعيون — جميع الحقوق محفوظة
+                        </p>
+                    </div>
+
                 </div>
-
-                <!-- روابط التواصل الاجتماعي الرسمية فقط (فيسبوك وإنستجرام - الأيقونة على يسار النص) -->
-                <div class="footer-social-grid">
-                    <a href="https://www.facebook.com/share/1EPGUrGrmU/" target="_blank" rel="noopener noreferrer" class="clinic-action-btn bg-white/[0.06] hover:bg-[#1877F2]/25 border border-white/15 hover:border-[#1877F2]/50 text-white">
-                        <span>فيسبوك</span>
-                        <svg class="w-4 h-4 text-sky-300 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M22 12.06C22 6.504 17.523 2 12 2S2 6.504 2 12.06c0 5.022 3.657 9.184 8.438 9.94v-7.03H7.898v-2.91h2.54V9.845c0-2.522 1.492-3.915 3.777-3.915 1.094 0 2.238.197 2.238.197v2.476h-1.26c-1.243 0-1.63.775-1.63 1.57v1.887h2.773l-.443 2.91h-2.33V22c4.78-.756 8.437-4.918 8.437-9.94z"/>
-                        </svg>
-                    </a>
-
-                    <a href="https://www.instagram.com/dr.islam.taher?knvt=MW1vMGQyYzhoZ3Q2aw==" target="_blank" rel="noopener noreferrer" class="clinic-action-btn bg-white/[0.06] hover:bg-pink-500/25 border border-white/15 hover:border-pink-400/50 text-white">
-                        <span>إنستجرام</span>
-                        <svg class="w-4 h-4 text-pink-300 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- سطر حقوق الملكية -->
-                <div class="pt-5 border-t border-white/10 text-center">
-                    <p class="text-xs text-slate-400 leading-relaxed">
-                        © جميع الحقوق محفوظة – عيادات د. إسلام طاهر رجب لطب وجراحة العيون
-                    </p>
-                </div>
-
             </div>
         </div>
     </footer>
 
-    <!-- كود JavaScript التفاعلي الكامل -->
+    <!-- كود JavaScript التفاعلي الكامل (بدون أي اعتراض لروابط خرائط جوجل المباشرة) -->
     <script>
-        /**
-         * إعدادات الخرائط المحدّثة لكل عيادة (Google Maps + مسار تطبيق Google Maps على iOS + بديل Apple Maps)
-         */
-        const CLINIC_MAP_CONFIG = {
-            manzala: {
-                googleMapsUrl: 'https://maps.app.goo.gl/UG879ybUDzUvEQhHA?g_st=ic',
-                iosGoogleScheme: 'comgooglemapsurl://maps.app.goo.gl/UG879ybUDzUvEQhHA?g_st=ic',
-                appleMapsUrl: 'https://maps.apple.com/?q=' + encodeURIComponent('عيادة د اسلام طاهر المنزلة الدقهلية')
-            },
-            matareya: {
-                googleMapsUrl: 'https://maps.app.goo.gl/cbyb6EZTTNG6tZ7a9?g_st=ic',
-                iosGoogleScheme: 'comgooglemapsurl://maps.app.goo.gl/cbyb6EZTTNG6tZ7a9?g_st=ic',
-                appleMapsUrl: 'https://maps.apple.com/?q=' + encodeURIComponent('عيادة د اسلام طاهر المطرية الدقهلية')
-            }
-        };
-
         /**
          * إظهار واجهة SVG بديلة في حال تعذر تحميل صورة الطبيب
          */
@@ -1032,7 +1003,7 @@
         }
 
         /**
-         * عرض الإشعار العائم غير المعترض للتفاعل
+         * عرض الإشعار العلوي العائم بدون اعتراض أي نقرات في الصفحة
          */
         let toastTimer = null;
         function showToast(message, variant = 'ok') {
@@ -1085,74 +1056,6 @@
         }
 
         /**
-         * فتح الخريطة بذكاء عبر الأنظمة المختلفة:
-         * - على أجهزة iOS (iPhone/iPad/iPod): يحاول فتح تطبيق Google Maps أولاً، وإذا بقيت الصفحة ظاهرة بعد ~900ms ينتقل تلقائيًا إلى Apple Maps
-         * - على Android والكمبيوتر: يفتح رابط Google Maps مباشرة في تبويب جديد
-         */
-        let activeIosFallbackCleanup = null;
-        function openSmartMap(clinicKey) {
-            const config = CLINIC_MAP_CONFIG[clinicKey];
-            if (!config) return;
-
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-            if (!isIOS) {
-                const opened = window.open(config.googleMapsUrl, '_blank', 'noopener,noreferrer');
-                if (!opened) {
-                    const fallbackLink = document.createElement('a');
-                    fallbackLink.href = config.googleMapsUrl;
-                    fallbackLink.target = '_blank';
-                    fallbackLink.rel = 'noopener noreferrer';
-                    document.body.appendChild(fallbackLink);
-                    fallbackLink.click();
-                    document.body.removeChild(fallbackLink);
-                }
-                return;
-            }
-
-            if (typeof activeIosFallbackCleanup === 'function') {
-                activeIosFallbackCleanup();
-            }
-
-            let didLeavePage = false;
-
-            const cleanup = () => {
-                clearTimeout(fallbackTimeout);
-                document.removeEventListener('visibilitychange', onVisibilityChange);
-                window.removeEventListener('pagehide', onPageHide);
-                activeIosFallbackCleanup = null;
-            };
-
-            const onVisibilityChange = () => {
-                if (document.hidden) {
-                    didLeavePage = true;
-                    cleanup();
-                }
-            };
-
-            const onPageHide = () => {
-                didLeavePage = true;
-                cleanup();
-            };
-
-            document.addEventListener('visibilitychange', onVisibilityChange);
-            window.addEventListener('pagehide', onPageHide);
-
-            const fallbackTimeout = setTimeout(() => {
-                cleanup();
-                if (!didLeavePage && !document.hidden) {
-                    window.location.href = config.appleMapsUrl;
-                }
-            }, 900);
-
-            activeIosFallbackCleanup = cleanup;
-
-            // محاولة فتح Google Maps أولاً على أجهزة iOS
-            window.location.href = config.iosGoogleScheme;
-        }
-
-        /**
          * التمرير السلس إلى أي قسم في الصفحة
          */
         function scrollToSection(sectionId) {
@@ -1174,6 +1077,7 @@
             const triggerClinic = document.getElementById('trigger-clinic');
             const triggerService = document.getElementById('trigger-service');
             const triggerDay = document.getElementById('trigger-day');
+
             const optionFriday = document.getElementById('option-friday');
             const fridayOffLabel = document.getElementById('friday-off-label');
             const fridayClearedNote = document.getElementById('friday-cleared-note');
@@ -1189,6 +1093,7 @@
             function closeAllSelects(exceptWrapper = null) {
                 allSelects.forEach((wrapper) => {
                     if (wrapper === exceptWrapper) return;
+                    wrapper.classList.remove('is-open');
                     const menu = wrapper.querySelector('.select-menu');
                     const trigger = wrapper.querySelector('.select-trigger');
                     const chevron = wrapper.querySelector('.select-chevron');
@@ -1212,22 +1117,22 @@
                 if (hiddenInput) hiddenInput.value = '';
                 if (labelEl) labelEl.textContent = placeholderText;
                 if (trigger) {
-                    trigger.classList.remove('text-[#0F172A]');
+                    trigger.classList.remove('text-[#0F2537]');
                     trigger.classList.add('text-slate-500');
                 }
 
                 options.forEach((opt) => {
                     opt.setAttribute('aria-selected', 'false');
-                    opt.classList.remove('bg-[#F0F8FF]', 'text-[#0B63A8]');
+                    opt.classList.remove('bg-[#F0F8FF]', 'text-[#0369A1]');
                     if (!opt.disabled) {
-                        opt.classList.add('text-slate-700');
+                        opt.classList.add('text-[#0F2537]');
                     }
                     const check = opt.querySelector('.select-check');
                     if (check) check.classList.add('hidden');
                 });
             }
 
-            // قاعدة يوم الجمعة الذكية حسب العيادة المختارة
+            // قاعدة يوم الجمعة الذكية (إجازة في عيادة المنزلة ومتاح في عيادة المطرية)
             function applyFridayRule(clinicKey) {
                 if (!optionFriday || !fridayOffLabel) return;
 
@@ -1235,11 +1140,11 @@
                     optionFriday.disabled = true;
                     optionFriday.setAttribute('aria-disabled', 'true');
                     optionFriday.classList.add('opacity-55', 'cursor-not-allowed', 'text-slate-400');
-                    optionFriday.classList.remove('hover:bg-[#F0F8FF]', 'hover:text-[#0B63A8]', 'text-slate-700');
+                    optionFriday.classList.remove('hover:bg-[#F0F8FF]', 'hover:text-[#0369A1]', 'text-[#0F2537]');
                     fridayOffLabel.classList.remove('hidden');
 
                     if (inputDay && inputDay.value === 'الجمعة') {
-                        resetCustomSelect(selectDay, 'اختر يوم الحجز');
+                        resetCustomSelect(selectDay, 'اختر اليوم المناسب');
                         if (fridayClearedNote) {
                             fridayClearedNote.classList.remove('hidden');
                         }
@@ -1249,7 +1154,7 @@
                     optionFriday.disabled = false;
                     optionFriday.removeAttribute('aria-disabled');
                     optionFriday.classList.remove('opacity-55', 'cursor-not-allowed', 'text-slate-400');
-                    optionFriday.classList.add('hover:bg-[#F0F8FF]', 'hover:text-[#0B63A8]', 'text-slate-700');
+                    optionFriday.classList.add('hover:bg-[#F0F8FF]', 'hover:text-[#0369A1]', 'text-[#0F2537]');
                     fridayOffLabel.classList.add('hidden');
                     if (fridayClearedNote) {
                         fridayClearedNote.classList.add('hidden');
@@ -1257,7 +1162,7 @@
                 }
             }
 
-            // تعيين قيمة في أي قائمة منسدلة مخصصة
+            // تعيين قيمة مختارة داخل أي قائمة منسدلة مخصصة
             function setCustomSelectValue(wrapper, value) {
                 if (!wrapper || !value) return;
                 const hiddenInput = wrapper.querySelector('input[type="hidden"]');
@@ -1271,15 +1176,15 @@
                     const check = opt.querySelector('.select-check');
                     if (optVal === value && !opt.disabled) {
                         opt.setAttribute('aria-selected', 'true');
-                        opt.classList.add('bg-[#F0F8FF]', 'text-[#0B63A8]');
-                        opt.classList.remove('text-slate-700');
+                        opt.classList.add('bg-[#F0F8FF]', 'text-[#0369A1]');
+                        opt.classList.remove('text-[#0F2537]');
                         if (check) check.classList.remove('hidden');
                         matchedKey = opt.getAttribute('data-key');
                     } else {
                         opt.setAttribute('aria-selected', 'false');
-                        opt.classList.remove('bg-[#F0F8FF]', 'text-[#0B63A8]');
+                        opt.classList.remove('bg-[#F0F8FF]', 'text-[#0369A1]');
                         if (!opt.disabled) {
-                            opt.classList.add('text-slate-700');
+                            opt.classList.add('text-[#0F2537]');
                         }
                         if (check) check.classList.add('hidden');
                     }
@@ -1289,7 +1194,7 @@
                 if (labelEl) labelEl.textContent = value;
                 if (trigger) {
                     trigger.classList.remove('text-slate-500', 'border-red-500', 'ring-2', 'ring-red-200', 'bg-red-50/40');
-                    trigger.classList.add('text-[#0F172A]', 'border-slate-300');
+                    trigger.classList.add('text-[#0F2537]', 'border-slate-300');
                 }
 
                 if (wrapper.id === 'select-clinic') {
@@ -1315,7 +1220,7 @@
                 });
             });
 
-            // 2. أزرار الاختيار السريع في بطاقتي العيادات ("احجز في المنزلة" / "احجز في المطرية")
+            // 2. أزرار الحجز السريع في بطاقتي العيادات ("احجز في المنزلة" / "احجز في المطرية")
             document.querySelectorAll('.quick-clinic-btn').forEach((btn) => {
                 btn.addEventListener('click', () => {
                     const clinicValue = btn.getAttribute('data-quick-clinic');
@@ -1337,7 +1242,7 @@
                 });
             });
 
-            // 4. أزرار نسخ العنوان المدمجة داخل مربع العنوان
+            // 4. أزرار نسخ العنوان المدمجة داخل مربعات العناوين
             document.querySelectorAll('.copy-icon-btn').forEach((btn) => {
                 let resetIconTimer = null;
                 btn.addEventListener('click', () => {
@@ -1366,17 +1271,7 @@
                 });
             });
 
-            // 5. أزرار الخريطة الذكية (Google Maps أولاً ثم Apple Maps على iOS)
-            document.querySelectorAll('.smart-map-btn').forEach((btn) => {
-                btn.addEventListener('click', () => {
-                    const clinicKey = btn.getAttribute('data-clinic-map');
-                    if (clinicKey) {
-                        openSmartMap(clinicKey);
-                    }
-                });
-            });
-
-            // 6. تفعيل القوائم المنسدلة المخصصة مع دعم لوحة المفاتيح والإغلاق عند النقر خارجها
+            // 5. تفعيل القوائم المنسدلة المخصصة ودعم لوحة المفاتيح والإغلاق التلقائي
             allSelects.forEach((wrapper) => {
                 const trigger = wrapper.querySelector('.select-trigger');
                 const menu = wrapper.querySelector('.select-menu');
@@ -1387,11 +1282,13 @@
                     const isClosed = menu.classList.contains('menu-closed');
                     closeAllSelects(wrapper);
                     if (isClosed) {
+                        wrapper.classList.add('is-open');
                         menu.classList.remove('menu-closed');
                         menu.classList.add('menu-open');
                         trigger.setAttribute('aria-expanded', 'true');
                         if (chevron) chevron.classList.add('rotate-180');
                     } else {
+                        wrapper.classList.remove('is-open');
                         menu.classList.remove('menu-open');
                         menu.classList.add('menu-closed');
                         trigger.setAttribute('aria-expanded', 'false');
@@ -1466,7 +1363,7 @@
                 }
             });
 
-            // إخفاء تنبيه الاسم بمجرد الكتابة
+            // إزالة رسالة خطأ الاسم فور الكتابة
             if (patientNameInput) {
                 patientNameInput.addEventListener('input', () => {
                     if (patientNameInput.value.trim()) {
@@ -1476,7 +1373,7 @@
                 });
             }
 
-            // 7. التحقق من جميع الحقول المطلوبة وإرسال رسالة واتساب إلى رقم الدكتور (201009079363)
+            // 6. التحقق من الحقول المطلوبة وإرسال رسالة واتساب منسقة إلى رقم الدكتور (201009079363)
             if (bookingForm) {
                 bookingForm.addEventListener('submit', (e) => {
                     e.preventDefault();
@@ -1488,7 +1385,7 @@
 
                     let hasError = false;
 
-                    // 1) التحقق من الاسم بالكامل
+                    // 1) التحقق من الاسم
                     if (!nameVal) {
                         hasError = true;
                         if (patientNameInput) {
@@ -1502,7 +1399,7 @@
                         if (errorName) errorName.classList.add('hidden');
                     }
 
-                    // 2) التحقق من اختيار العيادة
+                    // 2) التحقق من العيادة
                     if (!clinicVal) {
                         hasError = true;
                         if (triggerClinic) {
@@ -1518,7 +1415,7 @@
                         if (errorClinic) errorClinic.classList.add('hidden');
                     }
 
-                    // 3) التحقق من اختيار نوع الكشف
+                    // 3) التحقق من نوع الكشف
                     if (!serviceVal) {
                         hasError = true;
                         if (triggerService) {
@@ -1534,7 +1431,7 @@
                         if (errorService) errorService.classList.add('hidden');
                     }
 
-                    // 4) التحقق من اختيار يوم الحجز
+                    // 4) التحقق من يوم الحجز
                     if (!dayVal) {
                         hasError = true;
                         if (triggerDay) {
@@ -1552,20 +1449,20 @@
 
                     if (hasError) {
                         if (!nameVal) {
-                            showToast('يرجى إدخال اسم المريض بالكامل أولاً', 'warn');
+                            showToast('يرجى إدخال اسم المريض بالكامل أولًا', 'warn');
                         } else if (!clinicVal) {
-                            showToast('يرجى اختيار العيادة أولاً', 'warn');
+                            showToast('يرجى اختيار العيادة أولًا قبل تأكيد الحجز', 'warn');
                         } else if (!serviceVal) {
-                            showToast('يرجى اختيار نوع الكشف', 'warn');
+                            showToast('يرجى اختيار نوع الكشف المطلوب', 'warn');
                         } else {
-                            showToast('يرجى اختيار يوم الحجز', 'warn');
+                            showToast('يرجى اختيار اليوم المناسب للحجز', 'warn');
                         }
                         return;
                     }
 
-                    // صياغة رسالة واتساب المنسقة بنفس ترتيب الحقول
+                    // صياغة رسالة واتساب المنسقة
                     const message = [
-                        'السلام عليكم، أرغب في حجز موعد بعيادة د. إسلام طاهر رجب:',
+                        'مرحبًا عيادة د. إسلام طاهر، أرغب في حجز موعد:',
                         `- الاسم: ${nameVal}`,
                         `- العيادة: ${clinicVal}`,
                         `- نوع الكشف: ${serviceVal}`,
